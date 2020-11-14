@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7AB5CF"
+    tools:context=".MainActivity">
+
+    <!-- Poniższy kod odpowiada za wyświetlanie czasu domyślnego na podstawie czasu maszyny
+    na której pracuje aplikacja. Ustawiony jest format 12-godzinny, dodane są ustawienia
+    koloru, stylu oraz wielkości tekstu.-->
+    <TextClock
+        android:id="@+id/selective_clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:format12Hour="h:mm:ss a"
+        android:textColor="#FFEB3B"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Poniższy kod odpowiada za trzy różne przyciski, służące do zmiany wyświetlanego
+    aktualnego czasu. -->
+    <Button
+        android:id="@+id/france_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#009688"
+        android:onClick="onClickFrance"
+        android:text="@string/time_paris"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <Button
+        android:id="@+id/poland_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00BCD4"
+        android:onClick="onClickPoland"
+        android:text="@string/time_wroclaw"
+        app:layout_constraintBottom_toTopOf="@id/france_button" />
+
+    <Button
+        android:id="@+id/japan_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2196F3"
+        android:onClick="onClickJapan"
+        android:text="@string/time_tokyo"
+        app:layout_constraintBottom_toTopOf="@id/poland_button" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
